@@ -1,24 +1,35 @@
 # MySQL settings
-MYSQL_HOST=mysql
+MYSQL_HOST=calvo-cover-rds-mysql.ccgdmi3cluqx.me-south-1.rds.amazonaws.com
 MYSQL_PORT=3306
 MYSQL_ROOT_PASSWORD=scandipwa
-MYSQL_USER=magento
-MYSQL_PASSWORD=magento
-MYSQL_DATABASE=magento
+MYSQL_USER=admin
+MYSQL_PASSWORD=CalvoCover86$$
+MYSQL_DATABASE=calvo_cover_db
+
+#MYSQL_HOST=mysql
+#MYSQL_PORT=3306
+#MYSQL_ROOT_PASSWORD=scandipwa
+#MYSQL_USER=magento
+#MYSQL_PASSWORD=magento
+#MYSQL_DATABASE=magento
+
 
 # Magento settings
 MAGENTO_FIRST_NAME=Scandiweb
 MAGENTO_LAST_NAME=Developer
 MAGENTO_EMAIL=developer@scandipwa.com
 MAGENTO_USER=admin
-MAGENTO_PASSWORD=scandipwa123
-MAGENTO_ADMINURI=admin
+MAGENTO_PASSWORD=admin123
+MAGENTO_ADMINURI=admin_doimt5
 
-MAGENTO_MODE=developer
+MAGENTO_MODE=default
 
 # You might experience some session-related issues when using localhost, use 127.0.0.1 instead!
-MAGENTO_BASEURL=http://scandipwa.local
-MAGENTO_SECURE_BASEURL=https://scandipwa.local
+#MAGENTO_BASEURL=http://scandipwa.local
+MAGENTO_BASEURL=https://store.calvocover.com
+
+#MAGENTO_SECURE_BASEURL=https://scandipwa.local
+MAGENTO_SECURE_BASEURL=https://store.calvocover.com
 
 # theme configuration
 SCANDIPWA_THEME=Scandiweb/pwa

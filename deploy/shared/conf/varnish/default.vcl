@@ -18,6 +18,7 @@ acl purge {
 }
 
 sub vcl_recv {
+    	
     if (req.method == "PURGE") {
         if (client.ip !~ purge) {
             return (synth(405, "Method not allowed"));
@@ -47,7 +48,7 @@ sub vcl_recv {
           /* Non-RFC2616 or CONNECT which is weird. */
           return (pipe);
     }
-
+    return (pass); 
     # We only deal with GET and HEAD by default
     if (req.method != "GET" && req.method != "HEAD") {
         return (pass);

@@ -14,6 +14,7 @@ backend default {
 acl purge {
     "localhost";
     "172.0.0.0"/8;
+    "192.168.0.0"/16;
 }
 
 sub vcl_recv {
@@ -46,7 +47,7 @@ sub vcl_recv {
           /* Non-RFC2616 or CONNECT which is weird. */
           return (pipe);
     }
-    return (pass); 
+
     # We only deal with GET and HEAD by default
     if (req.method != "GET" && req.method != "HEAD") {
         return (pass);
@@ -99,7 +100,7 @@ sub vcl_recv {
     # Static files caching
     if (req.url ~ "^/(pub/)?(media|static)/") {
         # Static files should not be cached by default
-        #return (pass);
+        return (pass);
 
         # But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
         unset req.http.Https;
